@@ -32,4 +32,7 @@ Route::get('apianggrek','Api\AnggreksApiController@index');
 
 
 Route::get('apikonsumen','Api\KonsumensApiController@index');
-Route::post('login','Api\KonsumensApiController@index');
+
+Route::post('login','Api\KonsumensApiController@login');
+Route::post('register','Api\KonsumensApiController@register');
+Route::get('me','Api\KonsumensApiController@me')->middleware('auth:api');
