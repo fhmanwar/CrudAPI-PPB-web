@@ -11,21 +11,97 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use Illuminate\Support\Facades\Route;
 
-Route::get('/','HomeController@login');
-Route::get('register','HomeController@register');
-Route::get('forgot','HomeController@forgot');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('login','HomeController@login');
+// Route::post('login','HomeController@loginPost');
+// Route::get('register','HomeController@registerview');
+// Route::post('register','HomeController@registerPost');
+// Route::get('logout','HomeController@logout');
+// Route::get('forgot','HomeController@forgot');
+
+Route::group(['middleware' => ['auth','cekakses']], function () {
+    //anggrek
+    //show All
+    Route::get('/anggrek','admin\AnggreksController@index');
+    //Create
+    Route::get('/create','admin\AnggreksController@create');
+    Route::post('/anggrek','admin\AnggreksController@store');
+    //read
+    Route::get('/anggrek/{id}','admin\AnggreksController@show');
+    // Update
+    // Route::get('/anggrek/{id}/edit','admin\AnggreksController@edit');
+    Route::put('/anggrek/{id}','admin\AnggreksController@update');
+    // delete
+    Route::delete('/anggrek/{id}','admin\AnggreksController@destroy');
+
+    //konsumen
+    //show All
+    Route::get('/konsumen','admin\KonsumenController@index');
+    //Create
+    Route::get('/create','admin\KonsumenController@create');
+    Route::post('/konsumen','admin\KonsumenController@store');
+    //read
+    Route::get('/konsumen/{id}','admin\KonsumenController@show');
+    // Update
+    // Route::get('/konsumen/{id}/edit','admin\AnggreksController@edit');
+    Route::put('/konsumen/{id}','admin\KonsumenController@update');
+    // delete
+    Route::delete('/konsumen/{id}','admin\KonsumenController@destroy');
 
 
-// Route::resource('home', 'HomeController');
+    Route::prefix('admin')->group(function(){
+        Route::get('/', function () {
+            return view('admin.dasbor.main');
+         })->name('admin.home');
 
-// Route::get('/admin/dasbor','admin\DasborController@index');
-Route::get('dasbor','admin\DasborController@index');
+        // //anggrek
+        // Route::prefix('anggrek')->group(function (){
 
-// Route::resource('/admin/dasbor', 'admin\DasborController');
+        // });
+        // //konsumen
+        // Route::prefix('konsumen')->group(function (){
+        //     // show All
+        //     Route::get('/','admin\KonsumenController@index')->name('admin.konsumen');
+        //     //Create
+        //     // Route::get('/create','admin\AnggreksController@create')->name('admin.anggrek.create');
+        //     Route::post('/','admin\KonsumenController@store')->name('admin.konsumen');
+        //     //read
+        //     Route::get('/read/{id}','admin\KonsumenController@show');
+        //     //Update
+        //     Route::get('/edit/{id}','admin\KonsumenController@show')->name('admin.konsumen.edit');
+        //     // Route::put('/{id}','admin\KonsumenController@update')->name('admin.konsumen.{id}');
+        //     // Route::put('/edit/{id}','admin\KonsumenController@update');
+        //     Route::post('/edit/{id}','admin\KonsumenController@update');
+        //     //delete
+        //     // Route::delete('/anggrek/{product}','admin\KonsumenController@destroy')->name('admin.anggrek');
+        //     Route::delete('/{id}','admin\KonsumenController@destroy');
+        // });
+    });
+});
+
+// //show All
+// Route::get('/anggrek','admin\AnggreksController@index');
+// //Create
+// Route::get('/create','admin\AnggreksController@create');
+// Route::post('/anggrek','admin\AnggreksController@store');
+// //read
+// Route::get('/anggrek/{id}','admin\AnggreksController@show');
+// // Update
+// // Route::get('/anggrek/{id}/edit','admin\AnggreksController@edit');
+// Route::put('/anggrek/{id}','admin\AnggreksController@update');
+// // delete
+// Route::delete('/anggrek/{id}','admin\AnggreksController@destroy');
+
+Route::get('/penjualan','admin\PenjualanController@index');
 
 //Barang
 // Route::resource('admin.barang', 'admin\ProductsController');
@@ -42,3 +118,8 @@ Route::get('/barang/{product}/edit','admin\ProductsController@edit');
 Route::put('/barang/{product}','admin\ProductsController@update');
 //delete
 Route::delete('/barang/{product}','admin\ProductsController@destroy');
+
+
+
+
+

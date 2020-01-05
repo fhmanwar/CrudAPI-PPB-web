@@ -20,3 +20,16 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->group( function () {
 // });
 Route::resource('barang', 'Api\ProductsApiController');
+
+//anggrek
+// Route::resource('apianggrek', 'Api\AnggreksApiController');
+//show All
+Route::get('apianggrek','Api\AnggreksApiController@index');
+// Route::post('/apianggrek','Api\AnggreksApiController@store');
+// Route::get('/apianggrek/{product}','Api\AnggreksApiController@show');
+// Route::put('/apianggrek/{product}','Api\AnggreksApiController@update');
+// Route::delete('/apianggrek/{product}','Api\AnggreksApiController@destroy');
+
+
+Route::get('apikonsumen','Api\KonsumensApiController@index');
+Route::post('login','Api\KonsumensApiController@index');

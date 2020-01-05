@@ -1,5 +1,5 @@
-@extends('admin.layout.file')
-
+@extends('admin.layout.main')
+@section('title','Anggrek')
 @section('content')
 
 <!-- Info boxes -->
