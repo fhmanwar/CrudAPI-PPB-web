@@ -31,7 +31,7 @@ Route::get('apianggrek','Api\AnggreksApiController@index');
 // Route::delete('/apianggrek/{product}','Api\AnggreksApiController@destroy');
 
 
-Route::get('apikonsumen','Api\KonsumensApiController@index');
+Route::get('apikonsumen','Api\KonsumensApiController@getKonsumen');
 
 Route::post('login','Api\KonsumensApiController@login');
 Route::post('register','Api\KonsumensApiController@register');
