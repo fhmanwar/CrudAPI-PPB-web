@@ -6,19 +6,19 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLongTitle" aria-hidden="true">Tambah Data Anggrek</h3>
+				<h3 class="modal-title" id="exampleModalLongTitle" aria-hidden="true">Tambah Data Cemilan</h3>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 
-			<form action="/anggrek" method="post" enctype="multipart/form-data">
+			<form action="/cemilan" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div id="error_add"></div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Nama Anggrek</label>
-                        <input type="text" class="form-control" required="" placeholder="Nama Anggrek" name="name" value="{{ old('name') }}">
-                        @error('name')
+                        <label class="control-label col-xs-3" >Nama Cemilan</label>
+                        <input type="text" class="form-control" required="" placeholder="Nama Cemilan" name="nm_brg" value="{{ old('nm_brg') }}">
+                        @error('nm_brg')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

@@ -89,6 +89,35 @@
 
                 </li>
 
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            Cemilan-ku
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('cemilan') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Data Cemilan</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Data Api Cemilan</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+
                 {{-- <li class="nav-item has-treeview ">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
@@ -125,36 +154,9 @@
                         </li>
                     </ul>
 
-                </li>
-
-                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-user"></i>
-                        <p>
-                            Cemilan-ku
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ url('anggrek') }}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Data Cemilan</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Data Api Cemilan</p>
-                            </a>
-                        </li>
-                    </ul>
-
                 </li> --}}
+
+
 
             </ul>
         </nav>

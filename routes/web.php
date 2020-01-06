@@ -57,6 +57,18 @@ Route::group(['middleware' => ['auth','cekakses']], function () {
     // delete
     Route::delete('/konsumen/{id}','admin\KonsumenController@destroy');
 
+    //cemilan
+    //show All
+    Route::get('/cemilan','admin\CemilansController@index');
+    //Create
+    Route::post('/cemilan','admin\CemilansController@store');
+    //read
+    Route::get('/cemilan/{id}','admin\CemilansController@show');
+    // Update
+    Route::put('/cemilan/{id}','admin\CemilansController@update');
+    // delete
+    Route::delete('/cemilan/{id}','admin\CemilansController@destroy');
+
 
     Route::prefix('admin')->group(function(){
         Route::get('/', function () {

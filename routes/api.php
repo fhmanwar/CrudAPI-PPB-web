@@ -19,6 +19,13 @@ use Illuminate\Http\Request;
 
 // Route::middleware('auth:api')->group( function () {
 // });
+
+Route::post('login','Api\KonsumensApiController@login');
+Route::post('register','Api\KonsumensApiController@register');
+Route::get('me','Api\KonsumensApiController@me')->middleware('auth:api');
+
+Route::get('apikonsumen','Api\KonsumensApiController@getKonsumen');
+
 Route::resource('barang', 'Api\ProductsApiController');
 
 //anggrek
@@ -30,9 +37,6 @@ Route::get('apianggrek','Api\AnggreksApiController@index');
 // Route::put('/apianggrek/{product}','Api\AnggreksApiController@update');
 // Route::delete('/apianggrek/{product}','Api\AnggreksApiController@destroy');
 
+Route::get('apicemilan','Api\CemilansApiController@index');
 
-Route::get('apikonsumen','Api\KonsumensApiController@getKonsumen');
 
-Route::post('login','Api\KonsumensApiController@login');
-Route::post('register','Api\KonsumensApiController@register');
-Route::get('me','Api\KonsumensApiController@me')->middleware('auth:api');
