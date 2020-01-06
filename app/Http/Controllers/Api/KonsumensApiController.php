@@ -40,6 +40,10 @@ class KonsumensApiController extends Controller
                     'token' => $currentUser->api_token,
                 ],
             ]);
+        } else {
+            return response()->json([
+                'error' => 'not Found, you must register',
+            ]);
         }
 
         return response()->json([
