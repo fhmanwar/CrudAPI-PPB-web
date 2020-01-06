@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2020 at 04:25 PM
+-- Generation Time: Jan 06, 2020 at 05:57 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.11
 
@@ -54,7 +54,8 @@ INSERT INTO `anggreks` (`id`, `name`, `desc`, `price`, `image`, `created_at`, `u
 (8, 'Anggrek Tanah', NULL, 900000, 'http://127.0.0.1:8000/image/upload/anggrek/19.jpg', '2019-12-30 21:03:05', '2019-12-31 05:49:14', NULL),
 (9, 'Anggrek Tebu', NULL, 550000, 'http://127.0.0.1:8000/image/upload/anggrek/39.jpg', '2019-12-30 21:03:27', '2019-12-31 05:49:21', NULL),
 (10, 'Anggrek Vanda', 'kjasndansdknasd lorem pisum', 750000, 'http://127.0.0.1:8000/image/upload/anggrek/86.jpg', '2019-12-30 21:03:50', '2020-01-04 09:38:52', NULL),
-(11, 'Anggrek sp', NULL, 900120, 'http://127.0.0.1:8000/image/upload/anggrek/1578130923.jpg', '2020-01-04 09:42:03', '2020-01-04 09:42:07', '2020-01-04 09:42:07');
+(11, 'Anggrek sp', NULL, 900120, 'http://127.0.0.1:8000/image/upload/anggrek/1578130923.jpg', '2020-01-04 09:42:03', '2020-01-04 09:42:07', '2020-01-04 09:42:07'),
+(12, 'Cemilan Baso', 'asdasd', 12333, 'http://127.0.0.1:8000/image/upload/anggrek/1578322249.jpg', '2020-01-06 14:50:49', '2020-01-06 14:50:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -74,6 +75,31 @@ CREATE TABLE `ayams` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cemilans`
+--
+
+CREATE TABLE `cemilans` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nm_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cemilans`
+--
+
+INSERT INTO `cemilans` (`id`, `nm_brg`, `desc`, `price`, `image`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Cemilan Banana', 'asasdasd', 90000, 'banana1.jpg', '2020-01-06 14:32:39', '2020-01-06 15:52:45', NULL),
+(2, 'Cemilan Bakso Aci', 'asd', 10000, 'basoaci.jpg', '2020-01-06 14:42:50', '2020-01-06 17:49:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -122,7 +148,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (35, '2016_06_01_000003_create_oauth_refresh_tokens_table', 6),
 (36, '2016_06_01_000004_create_oauth_clients_table', 6),
 (37, '2016_06_01_000005_create_oauth_personal_access_clients_table', 6),
-(38, '2020_01_05_184829_api_token_users_table', 6);
+(38, '2020_01_05_184829_api_token_users_table', 6),
+(39, '2020_01_06_204347_create_cemilan_table', 7);
 
 -- --------------------------------------------------------
 
@@ -336,6 +363,12 @@ ALTER TABLE `ayams`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cemilans`
+--
+ALTER TABLE `cemilans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -421,13 +454,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anggreks`
 --
 ALTER TABLE `anggreks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `ayams`
 --
 ALTER TABLE `ayams`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cemilans`
+--
+ALTER TABLE `cemilans`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -439,7 +478,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -475,7 +514,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
