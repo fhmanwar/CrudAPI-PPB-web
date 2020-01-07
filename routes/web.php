@@ -64,6 +64,8 @@ Route::group(['middleware' => ['auth','cekakses']], function () {
 
     //Order
     Route::get('/order','admin\OrdersController@index');
+    Route::get('/order/to_pdf','admin\OrdersController@orderGlobaltoPDF');
+    // Route::get('/downloadPDF/{id}','OrdersController@downloadPDF');
 
 
     Route::prefix('admin')->group(function(){

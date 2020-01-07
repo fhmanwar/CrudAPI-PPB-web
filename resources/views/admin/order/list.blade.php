@@ -3,6 +3,65 @@
 @section('content')
 
 <div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-lightblue">
+                <h3 class="card-title">Filter per Periode</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Tanggal Awal</label>
+                            <input type="date" class="form-control" name="start">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Tanggal Akhir</label>
+                            <input type="date" class="form-control" name="end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-lightblue">
+                <h3 class="card-title">Filter per Periode</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Cetak Global PDF</label>
+                        </div>
+                        <div class="form-group">
+                            <a href="/order/to_pdf" class="btn bg-pink" target="_blank">CETAK</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Cetak Periodik PDF</label>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="btn bg-purple" target="_blank">CETAK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+<div class="row">
     <div class="col-12">
         {{-- <p>@include('admin.konsumen.create')</p> --}}
         @if (session('status'))
@@ -11,8 +70,8 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+            <div class="card-header bg-teal">
+                <h3 class="card-title">List Penjualan</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
