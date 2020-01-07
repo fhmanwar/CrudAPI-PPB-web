@@ -26,7 +26,7 @@ Route::get('me','Api\KonsumensApiController@me')->middleware('auth:api');
 
 Route::get('apikonsumen','Api\KonsumensApiController@getKonsumen');
 
-Route::resource('barang', 'Api\ProductsApiController');
+// Route::resource('barang', 'Api\ProductsApiController');
 
 //anggrek
 // Route::resource('apianggrek', 'Api\AnggreksApiController');
@@ -38,5 +38,8 @@ Route::get('apianggrek','Api\AnggreksApiController@index');
 // Route::delete('/apianggrek/{product}','Api\AnggreksApiController@destroy');
 
 Route::get('apicemilan','Api\CemilansApiController@index');
+
+Route::get('apiorder','Api\OrdersApiController@index');
+Route::post('apiorder','Api\OrdersApiController@store');
 
 

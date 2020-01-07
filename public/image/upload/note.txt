@@ -3,7 +3,7 @@ bahan yang harus di install:
 
 untuk pdf :
 - composer require barryvdh/laravel-dompdf
-- tambahkan :
+- tambahkan config/app:
     'providers' => [
         ....
         Barryvdh\DomPDF\ServiceProvider::class,
@@ -16,3 +16,20 @@ untuk pdf :
     ]
 
     controller tamabhkan : user PDF
+
+untuk xls:
+- composer require maatwebsite/excel
+- tambahkan config/app:
+    'providers' => [
+        ...
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+    ]
+    'aliases' => [
+        ...
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+    ]
+- untuk publish di vendor :
+    php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+
+- untuk menampilkan data order secara otomatis :
+    php artisan make:export OrderExport --model=Order

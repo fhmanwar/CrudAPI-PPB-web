@@ -42,7 +42,7 @@
                             <label>Cetak Global PDF</label>
                         </div>
                         <div class="form-group">
-                            <a href="/order/to_pdf" class="btn bg-pink" target="_blank">CETAK</a>
+                            <a href="/order/to_pdf" class="btn bg-pink" target="_blank"><i class="far fa-file-pdf"></i> Cetak</a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -50,7 +50,25 @@
                             <label>Cetak Periodik PDF</label>
                         </div>
                         <div class="form-group">
-                            <a href="#" class="btn bg-purple" target="_blank">CETAK</a>
+                            <a href="#" class="btn bg-purple" target="_blank"><i class="far fa-file-pdf"></i> Cetak</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Cetak Global Excel</label>
+                        </div>
+                        <div class="form-group">
+                            <a href="/order/to_xls" class="btn bg-fuchsia" target="_blank"><i class="far fa-file-excel"></i> Cetak</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Cetak Periodik Excel</label>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="btn bg-maroon" target="_blank"><i class="far fa-file-excel"></i> Cetak</a>
                         </div>
                     </div>
                 </div>
