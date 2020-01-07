@@ -37,7 +37,8 @@
                                     <td>{{ $loop->iteration }} </td>
                                     <td>
                                         @if ($row->image != "")
-                                            <img src="{{ asset('image/upload/cemilan/'.$row->image) }}" class="img img-thumbnail" width="60">
+                                            {{-- <img src="{{ asset('image/upload/cemilan/'.$row->image) }}" class="img img-thumbnail" width="60"> --}}
+                                            <img src="{{ url($row->image) }}" class="img img-thumbnail" width="60">
                                         @else
                                             {{ 'Tidak ada' }}
                                         @endif

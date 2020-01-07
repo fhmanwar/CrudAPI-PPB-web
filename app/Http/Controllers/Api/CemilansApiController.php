@@ -16,12 +16,7 @@ class CemilansApiController extends Controller
      */
     public function index()
     {
-        // return Cemilan::all();
-        // $data = Cemilan::get();
-        // $data = Cemilan::with("image")->get();
-        $data = Cemilan::all();
-        return CemilanResource::collection($data);
-        // return new CemilanResource(Cemilan::all());
+        return Cemilan::all();
     }
 
     /**

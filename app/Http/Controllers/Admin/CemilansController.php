@@ -45,16 +45,16 @@ class CemilansController extends Controller
                 'nm_brg' => 'required',
                 'image' => 'required|image|max:2048'
             ]);
-            // $path = url('image/upload/cemilan/');
+            $path = asset('image/upload/cemilan/');
             $name = $image->getClientOriginalName();
-            // $new_name = $path.'/'.$name;
+            $new_name = $path.'/'.$name;
             $image->move(public_path('image/upload/cemilan/'),$name);
 
             Cemilan::create([
                 'nm_brg' => $request->nm_brg,
                 'desc' => $request->desc,
                 'price' => $request->price,
-                'image' => $name
+                'image' => $new_name
             ]);
             // $data = [
             //     'nm_brg' => $request->nm_brg,
@@ -71,7 +71,7 @@ class CemilansController extends Controller
             ]);
         }
 
-        // return redirect('/cemilan')->with('status', 'Data Telah ditambahkan!');
+        return redirect('/cemilan')->with('status', 'Data Telah ditambahkan!');
     }
 
     /**
@@ -113,10 +113,10 @@ class CemilansController extends Controller
                 'nm_brg' => 'required',
                 'image' => 'required|image|max:2048'
             ]);
-            // $path = url('image/upload/cemilan/');
+            $path = asset('image/upload/cemilan/');
             $name = $image->getClientOriginalName();
-            // $imageName = $path.'/'.$name;
-            $image->move(public_path('image/upload/cemilan/'),$imageName);
+            $imageName = $path.'/'.$name;
+            $image->move(public_path('image/upload/cemilan/'),$name);
         } else {
             $request->validate([
                 'nm_brg' => 'required',
@@ -128,7 +128,7 @@ class CemilansController extends Controller
             'nm_brg' => $request->nm_brg,
             'desc' => $request->desc,
             'price' => $request->price,
-            'image' => $name
+            'image' => $imageName
         ]);
 
         return redirect('/cemilan')->with('status', 'Data berhasil diupdate');

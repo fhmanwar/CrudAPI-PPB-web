@@ -42,8 +42,8 @@
                                 <label class="control-label col-xs-3" >Image</label>
                                 <input type="file" class="form-control" name="image" value="{{ $row->image }}">
                                 @if ($row->image != "")
-                                    {{-- <img src="{{ asset('image/upload/anggrek/'.$row->image) }}" class="img img-thumbnail" width="60"> --}}
-                                    <img src="{{ asset('image/upload/cemilan/'.$row->image) }}" class="img img-thumbnail" width="60">
+                                    {{-- <img src="{{ asset('image/upload/cemilan/'.$row->image) }}" class="img img-thumbnail" width="60"> --}}
+                                    <img src="{{ url($row->image) }}" class="img img-thumbnail" width="60">
                                 @else
                                     {{ 'Tidak ada' }}
                                 @endif
