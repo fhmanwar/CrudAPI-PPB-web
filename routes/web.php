@@ -21,13 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('login','HomeController@login');
-// Route::post('login','HomeController@loginPost');
-// Route::get('register','HomeController@registerview');
-// Route::post('register','HomeController@registerPost');
-// Route::get('logout','HomeController@logout');
-// Route::get('forgot','HomeController@forgot');
-
 Route::group(['middleware' => ['auth','cekakses']], function () {
     //anggrek
     //show All
@@ -68,6 +61,9 @@ Route::group(['middleware' => ['auth','cekakses']], function () {
     Route::put('/cemilan/{id}','admin\CemilansController@update');
     // delete
     Route::delete('/cemilan/{id}','admin\CemilansController@destroy');
+
+    //Order
+    Route::get('/order','admin\OrdersController@index');
 
 
     Route::prefix('admin')->group(function(){
@@ -113,7 +109,6 @@ Route::group(['middleware' => ['auth','cekakses']], function () {
 // // delete
 // Route::delete('/anggrek/{id}','admin\AnggreksController@destroy');
 
-Route::get('/penjualan','admin\PenjualanController@index');
 
 //Barang
 // Route::resource('admin.barang', 'admin\ProductsController');

@@ -67,26 +67,6 @@
                         </li>
                     </ul>
 
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            {{-- <a href="{{ route('admin.konsumen') }}" class="nav-link"> --}}
-                            <a href="{{ url('konsumen') }}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Data Konsumen</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            {{-- <a href="{{ route('admin.konsumen') }}" class="nav-link"> --}}
-                            <a href="{{ url('konsumen') }}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Data Penjualan</p>
-                            </a>
-                        </li>
-                    </ul>
-
                 </li>
 
                 <li class="nav-item has-treeview ">
@@ -112,6 +92,37 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Data Api Cemilan</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            User & Transaksi
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            {{-- <a href="{{ route('admin.konsumen') }}" class="nav-link"> --}}
+                            <a href="{{ url('konsumen') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Data Konsumen</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('order') }}" class="nav-link">
+                            {{-- <a href="#" class="nav-link"> --}}
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Data Penjualan</p>
                             </a>
                         </li>
                     </ul>

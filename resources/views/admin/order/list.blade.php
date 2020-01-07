@@ -38,10 +38,10 @@
                             @else
                                 <tr>
                                     <td>{{ $loop->iteration }} </td>
-                                    <td>{{ $row->create_at }}</td>
+                                    <td>{{ $row->created_at }}</td>
                                     <td>{{ $row->name }}</td>
-                                    <td>{{ $row->name }}</td>
-                                    <td>{{ $row->harga }}</td>
+                                    <td>{{ $row->nm_anggrek }}</td>
+                                    <td>{{ $row->price }}</td>
                                     <td>{{ $row->qty }}</td>
                                     <td>{{ $row->total }}</td>
                                     <td>

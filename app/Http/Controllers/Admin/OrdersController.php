@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Penjualan;
+use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PenjualanController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +16,15 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        $data = DB::table('penjualans')
-                ->join('users','users.id', '=', 'penjualans.id_user')
-                ->join('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
-                ->join('orders','orders.id', '=', 'penjualans.id_order')
+        $data = DB::table('orders')
+                ->leftJoin('users','users.id', '=', 'orders.id_user')
+                ->leftJoin('penjualans','penjualans.id_order', '=', 'orders.id')
+                ->leftJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
                 ->where('users.akses','=','user')
                 ->get();
+        // return $data;
 
-
-        return $data;
+        return view('admin.order.list', compact('data'));
     }
 
     /**
@@ -51,10 +51,10 @@ class PenjualanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Penjualan  $penjualan
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Penjualan $penjualan)
+    public function show(Order $order)
     {
         //
     }
@@ -62,10 +62,10 @@ class PenjualanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Penjualan  $penjualan
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Penjualan $penjualan)
+    public function edit(Order $order)
     {
         //
     }
@@ -74,10 +74,10 @@ class PenjualanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Penjualan  $penjualan
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Penjualan $penjualan)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -85,10 +85,10 @@ class PenjualanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Penjualan  $penjualan
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penjualan $penjualan)
+    public function destroy(Order $order)
     {
         //
     }
