@@ -1,3 +1,18 @@
 bahan yang harus di install:
 - composer require doctrine/dbal
+
+untuk pdf :
 - composer require barryvdh/laravel-dompdf
+- tambahkan :
+    'providers' => [
+        ....
+        Barryvdh\DomPDF\ServiceProvider::class,
+    ],
+
+
+    'aliases' => [
+        ....
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+    ]
+
+    controller tamabhkan : user PDF
