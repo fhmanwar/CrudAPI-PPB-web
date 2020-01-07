@@ -20,14 +20,14 @@ class OrdersApiController extends Controller
      */
     public function index()
     {
-        // return Order::all();
-        $data = DB::table('orders')
-                ->rightJoin('users','users.id', '=', 'orders.id_user')
-                ->rightJoin('penjualans','penjualans.id_order', '=', 'orders.id')
-                ->rightJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
-                ->where('users.akses','=','user')
-                ->get();
-        return $data;
+        return Order::all();
+        // $data = DB::table('orders')
+        //         ->rightJoin('users','users.id', '=', 'orders.id_user')
+        //         ->rightJoin('penjualans','penjualans.id_order', '=', 'orders.id')
+        //         ->rightJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
+        //         ->where('users.akses','=','user')
+        //         ->get();
+        // return $data;
     }
 
     /**
@@ -78,7 +78,7 @@ class OrdersApiController extends Controller
 
         $tn_order = new Penjualan();
         $tn_order->id_order = $order->id;
-        $tn_order->id_anggrek =  '12';  // uses the previously save id
+        $tn_order->id_anggrek =  '9';  // uses the previously save id
         $tn_order->qty = '3';
         $tn_order->subtotal = '200000';
         $tn_order->save();

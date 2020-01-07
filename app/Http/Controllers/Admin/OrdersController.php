@@ -21,9 +21,9 @@ class OrdersController extends Controller
                 ->leftJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
                 ->where('users.akses','=','user')
                 ->get();
-        // return $data;
+        return $data;
 
-        return view('admin.order.list', compact('data'));
+        // return view('admin.order.list', compact('data'));
     }
 
     public function downloadPDF($id) {
@@ -36,8 +36,8 @@ class OrdersController extends Controller
     public function orderGlobaltoPDF()
     {
         $data = DB::table('orders')
-                ->leftJoin('users','users.id', '=', 'orders.id_user')
                 ->leftJoin('penjualans','penjualans.id_order', '=', 'orders.id')
+                ->leftJoin('users','users.id', '=', 'orders.id_user')
                 ->leftJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
                 ->where('users.akses','=','user')
                 ->get();
