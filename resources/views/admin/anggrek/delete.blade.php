@@ -6,7 +6,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="myModalLabel">Delete Data {{ $row->name }}</h3>
+                <h3 class="modal-title" id="myModalLabel">Delete Data {{ $row->nm_anggrek }}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
 

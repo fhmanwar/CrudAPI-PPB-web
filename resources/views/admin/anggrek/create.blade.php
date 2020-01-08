@@ -17,8 +17,8 @@
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >Nama Anggrek</label>
-                        <input type="text" class="form-control" required="" placeholder="Nama Anggrek" name="name" value="{{ old('name') }}">
-                        @error('name')
+                        <input type="text" class="form-control" required="" placeholder="Nama Anggrek" name="nm_anggrek" value="{{ old('nm_anggrek') }}">
+                        @error('nm_anggrek')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

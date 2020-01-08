@@ -21,9 +21,9 @@ class OrdersController extends Controller
                 ->leftJoin('anggreks','anggreks.id', '=', 'penjualans.id_anggrek')
                 ->where('users.akses','=','user')
                 ->get();
-        return $data;
+        // return $data;
 
-        // return view('admin.order.list', compact('data'));
+        return view('admin.order.list', compact('data'));
     }
 
     public function downloadPDF($id) {

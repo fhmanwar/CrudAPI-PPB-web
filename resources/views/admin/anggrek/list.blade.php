@@ -42,7 +42,7 @@
                                             {{ 'Tidak ada' }}
                                         @endif
                                     </td>
-                                    <td>{{ $row->name }}</td>
+                                    <td>{{ $row->nm_anggrek }}</td>
                                     <td>{{ $row->price }}</td>
                                     <td>{{ $row->desc }}</td>
                                     <td>

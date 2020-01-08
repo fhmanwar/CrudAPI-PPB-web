@@ -41,7 +41,7 @@ class AnggreksController extends Controller
         if ($image) {
             //validasi
             $request->validate([
-                'name' => 'required',
+                'nm_anggrek' => 'required',
                 'image' => 'required|image|max:2048'
             ]);
             $path = url('image/upload/anggrek/');
@@ -51,14 +51,14 @@ class AnggreksController extends Controller
 
             // with fillable cara pertama
             Anggrek::create([
-                'name' => $request->name,
+                'nm_anggrek' => $request->nm_anggrek,
                 'desc' => $request->desc,
                 'price' => $request->price,
                 'image' => $new_name
             ]);
         } else {
             Anggrek::create([
-                'name' => $request->name,
+                'nm_anggrek' => $request->nm_anggrek,
                 'desc' => $request->desc,
                 'price' => $request->price,
             ]);
@@ -70,7 +70,7 @@ class AnggreksController extends Controller
 
         // // with fillable cara pertama
         // Anggrek::create([
-        //     'name' => $request->name,
+        //     'nm_anggrek' => $request->nm_anggrek,
         //     'desc' => $request->desc,
         //     'price' => $request->price,
         //     'image' => $new_name
@@ -117,7 +117,7 @@ class AnggreksController extends Controller
 
         if ($image != '') {
             $request->validate([
-                'name' => 'required',
+                'nm_anggrek' => 'required',
                 'image' => 'required|image|max:2048'
             ]);
             $path = url('image/upload/anggrek/');
@@ -126,13 +126,13 @@ class AnggreksController extends Controller
             $image->move(public_path('image/upload/anggrek/'),$imageName);
         } else {
             $request->validate([
-                'name' => 'required',
+                'nm_anggrek' => 'required',
             ]);
         }
 
         // Anggrek::where('id', $anggrek->id)
         //     ->update([
-        //         'name' => $request->name,
+        //         'nm_anggrek' => $request->nm_anggrek,
         //         'desc' => $request->desc,
         //         'price' => $request->price,
         //         'image' => $imageName
@@ -140,7 +140,7 @@ class AnggreksController extends Controller
 
         Anggrek::whereId($id)
             ->update([
-            'name' => $request->name,
+            'nm_anggrek' => $request->nm_anggrek,
             'desc' => $request->desc,
             'price' => $request->price,
             'image' => $imageName

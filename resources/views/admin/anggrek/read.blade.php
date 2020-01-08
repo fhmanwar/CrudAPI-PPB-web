@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="myModalLabel">Detail : {{$row->name}}</h3>
+                <h3 class="modal-title" id="myModalLabel">Detail : {{$row->nm_anggrek}}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <form class="form-horizontal">
@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <th>Nama Anggrek</th>
-                                <td>: {{$row->name}}</td>
+                                <td>: {{$row->nm_anggrek}}</td>
                             </tr>
                             <tr>
                                 <th>Harga</th>

@@ -19,8 +19,8 @@
                     <div class="form-group">
                         <label class="control-label col-xs-3" >Nama Anggrek</label>
                         <div class="col-md-12">
-                            <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" placeholder="Nama Anggrek" value="{{ $row->name }}" >
-                            @error('name')
+                            <input name="nm_anggrek" class="form-control @error('nm_anggrek') is-invalid @enderror" type="text" placeholder="Nama Anggrek" value="{{ $row->nm_anggrek }}" >
+                            @error('nm_anggrek')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
